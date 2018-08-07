@@ -74,6 +74,14 @@ app.get('/about', (req, res) => {
   });  // render anything used with our view engine
 });
 
+// new page in order to push to github and deploy on heroku as a new feature
+app.get('/projects', (req, res) => {
+  res.render('projects.hbs', {
+    pageTitle: 'Projects Page',
+    projectsMessage: 'This page shows the projects accomplished'
+  });
+});
+
 app.get('/bad', (req, res) => {
   res.send({
     errorMessage: 'Unable to handle request'
